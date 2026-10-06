@@ -2495,6 +2495,8 @@ dialog::backdrop { background: rgba(6,14,31,.8); }
   aspect-ratio: 4/3;
 }
 .mon-hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mon-hero-fig { margin: 0; }
+.mon-hero-cap { margin-top: .6rem; font-family: var(--mff-body); font-size: .8rem; line-height: 1.45; color: var(--mink3); }
 /* Sections */
 .mon-ed-section { padding: 3rem; border-bottom: 1px solid var(--mborder); background: var(--mpaper); font-family: var(--mff-body); }
 .mon-ed-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2rem; }
@@ -2508,6 +2510,45 @@ dialog::backdrop { background: rgba(6,14,31,.8); }
 .mon-pmeta { padding: 1rem 1.1rem; }
 .mon-ptitle { font-family: var(--mff-body); font-size: 13px; font-weight: 500; color: var(--mink2); }
 .mon-pdate { font-family: var(--mff-mono); font-size: 11px; color: var(--mink4); margin-top: 3px; }
+/* Illustrations commentées */
+.mon-illus-grid { display: flex; flex-direction: column; gap: 1.5rem; max-width: 960px; margin: 0 auto; }
+.mon-illus { margin: 0; border: 1px solid var(--mborder); border-radius: 12px; overflow: hidden; background: var(--mpaper2); display: grid; grid-template-columns: minmax(0, 9fr) minmax(0, 16fr); align-items: stretch; }
+.mon-illus-img { padding: 1.25rem; background: var(--mpaper); border-right: 1px solid var(--mborder); display: flex; align-items: center; justify-content: center; }
+.mon-illus-img img { width: 100%; height: auto; display: block; }
+.mon-illus figcaption { padding: 1.5rem 1.75rem; display: flex; flex-direction: column; justify-content: center; }
+.mon-illus-title { font-family: var(--mff-body); font-size: 15px; font-weight: 600; color: var(--mae-blue); line-height: 1.4; margin: 0 0 1rem; }
+.mon-illus-text { font-family: var(--mff-body); font-size: 14px; color: var(--mink3); line-height: 1.75; margin: 0; }
+/* Animation du principe */
+.mon-anim { margin: 0 auto 1.5rem; max-width: 960px; }
+.mon-ed-lead.mon-ed-lead--after { margin-top: 0; }
+.mon-num { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; margin: 0 .45em 0 .1em; border-radius: 50%; background: var(--mae-blue, #1a3a6b); color: #fff; font-size: 12px; font-weight: 700; line-height: 1; vertical-align: 1px; }
+.mon-ed-lead { margin: -0.75rem 0 1.75rem; font-family: var(--mff-body); font-size: 15px; line-height: 1.75; color: var(--mink3); }
+.mon-anim-svg { width: 100%; height: auto; display: block; border-radius: 12px; }
+.mon-anim-svg text { font-family: var(--mff-body); }
+.mon-anim-svg .ma-lbl { font-size: 18px; font-weight: 600; fill: #e8eef6; }
+.mon-anim-svg .ma-sub { font-size: 15px; fill: #ffb347; }
+.mon-anim-svg .ma-dark { font-size: 16px; font-weight: 600; fill: #1f2a37; }
+.mon-anim-svg .ma-scr { font-family: var(--mff-mono); font-size: 13px; fill: #8fa3bf; }
+.mon-anim-svg .ma-ok { fill: #34d399; }
+.mon-anim-svg .ma-step { font-size: 15px; font-weight: 600; fill: #e8eef6; }
+.mon-anim-cap { margin-top: .6rem; text-align: center; font-family: var(--mff-body); font-size: .8rem; line-height: 1.45; color: var(--mink3); }
+/* Graphique d'analyse */
+.mon-analysis-svg { width: 100%; height: auto; display: block; }
+.mon-analysis-svg text { font-family: var(--mff-body); }
+.mon-analysis-svg .ma-ct { font-size: 16px; font-weight: 600; fill: var(--mink2); }
+.mon-analysis-svg .ma-tick { font-size: 13.5px; fill: var(--mink3); }
+.mon-analysis-svg .ma-tick-alert { fill: #b4413a; }
+.mon-analysis-svg .ma-axis { stroke: var(--mink4); stroke-width: 1; }
+.mon-analysis-svg .ma-sep { stroke: var(--mink4); stroke-width: 1; stroke-dasharray: 3 3; }
+.mon-analysis-svg .ma-env { fill: #2a6f97; fill-opacity: .14; }
+.mon-analysis-svg .ma-ref { fill: none; stroke: var(--mink3); stroke-width: 1.3; stroke-dasharray: 4 3; }
+.mon-analysis-svg .ma-meas { fill: none; stroke: #2a6f97; stroke-width: 1.8; }
+.mon-analysis-svg .ma-alert { fill: #b4413a; fill-opacity: .12; }
+.mon-analysis-svg .ma-thr { stroke: #b4413a; stroke-width: 1.4; stroke-dasharray: 6 4; }
+.mon-analysis-svg .ma-bline { fill: none; stroke: #2a6f97; stroke-width: 1.6; }
+.mon-analysis-svg .ma-dot-l { fill: var(--mpaper); stroke: #2a6f97; stroke-width: 2; }
+.mon-analysis-svg .ma-dot-s { fill: #2a6f97; }
+.mon-illus-note { margin: .6rem 0 0; font-family: var(--mff-body); font-size: .75rem; color: var(--mink4); font-style: italic; }
 /* Annotations */
 .mon-ann { position: absolute; display: flex; align-items: flex-start; gap: 6px; cursor: default; }
 .mon-ann-pin {
@@ -2534,7 +2575,7 @@ dialog::backdrop { background: rgba(6,14,31,.8); }
 .mon-cl-line { width: 20px; height: 2px; border-radius: 1px; }
 /* Prediction */
 .mon-pred-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-top: 1.5rem; }
-.mon-pred-card { background: var(--mpaper2); border: 1px solid var(--mborder); border-radius: 10px; padding: 1rem 1.1rem; }
+.mon-pred-card { background: var(--mpaper2); border: 1px solid var(--mborder); border-radius: 10px; padding: .6rem 1.1rem; }
 .mon-pred-horizon { font-family: var(--mff-mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--mink4); margin-bottom: .4rem; }
 .mon-pred-val { font-family: var(--mff-disp); font-size: 1.8rem; font-weight: 400; color: var(--mink); }
 .mon-pred-delta { font-size: 12px; font-family: var(--mff-mono); margin-top: 3px; }
@@ -2571,6 +2612,8 @@ dialog::backdrop { background: rgba(6,14,31,.8); }
   .mon-hero { grid-template-columns: 1fr; padding: 2rem 1.2rem; }
   .mon-ed-section { padding: 2rem 1.2rem; }
   .mon-pgrid { grid-template-columns: 1fr; }
+  .mon-illus { grid-template-columns: 1fr; }
+  .mon-illus-img { border-right: 0; border-bottom: 1px solid var(--mborder); }
   .mon-pred-grid { grid-template-columns: 1fr; }
 }
 
@@ -2738,9 +2781,8 @@ dialog::backdrop { background: rgba(6,14,31,.8); }
     <div class="mon-hero mon-fade">
       <div>
         <h2 class="mon-h1">Suivi de l'état structural du fuselage en temps quasi réel</h2>
-        <p class="mon-desc">Le monitoring concerne une zone de fuselage du Boeing 707 « Château de Maintenon », située au-dessous de la porte de l'avion.</p>
-        <p class="mon-desc" style="margin-top:.75rem">La technique employée repose sur la propagation d'ondes ultrasonores guidées. Deux capteurs piézoélectriques sont utilisés espacés de 540 mm pour générer et recevoir les ondes ultrasonores guidées.</p>
-        <p class="mon-desc" style="margin-top:.75rem">Lorsqu'une tension alternative est appliquée, le capteur piézoélectrique transmet une onde ultrasonore qui se charge d'informations relatives à l'état de santé de la structure.</p>
+        <p class="mon-desc">Le monitoring concerne une zone du fuselage du Boeing 707 « Château de Maintenon », située sous la porte de l’avion.</p>
+        <p class="mon-desc" style="margin-top:.75rem">La technique mise en œuvre repose sur la propagation d’ondes ultrasonores guidées. Deux capteurs piézoélectriques, espacés de 540 mm, sont utilisés pour générer et recevoir ces ondes. Le pilotage des capteurs et l’acquisition des signaux sont assurés par le système TPAC PILOT.</p>
         <div class="mon-meta">
           <div><div class="mon-meta-label">Appareil</div><div class="mon-meta-val">Château de Maintenon</div></div>
           <div><div class="mon-meta-label">Zone capteur</div><div class="mon-meta-val">Fuselage sous porte</div></div>
@@ -2748,24 +2790,194 @@ dialog::backdrop { background: rgba(6,14,31,.8); }
           <div><div class="mon-meta-label">Périodicité</div><div class="mon-meta-val">2 mois</div></div>
         </div>
       </div>
-      <div class="mon-hero-photo">
-        <img src="images/Porte ext.png" alt="Porte extérieure Boeing 707 avec capteur">
-      </div>
+      <figure class="mon-hero-fig">
+        <div class="mon-hero-photo">
+          <img src="images/Porte ext.png" alt="Porte extérieure Boeing 707 avec capteur">
+        </div>
+        <figcaption class="mon-hero-cap">Monitoring d’une zone du fuselage du Boeing 707 « Château de Maintenon ». Photo : M. Massmoudi, IS, 24/03/2026</figcaption>
+      </figure>
     </div>
 
     <!-- 01 · Photo inspection -->
     <div class="mon-ed-section mon-fade">
       <div class="mon-ed-header">
         <h2 class="mon-ed-title">Principe de monitoring par ondes ultrasonores guidées</h2>
-        <span class="mon-ed-num">01 · Relevés photographiques</span>
       </div>
-      <div style="display:grid;grid-template-columns:0.75fr 1.25fr;gap:1.5rem;align-items:center;">
-        <div style="background:var(--mpaper2);border:1px solid var(--mborder);border-radius:12px;overflow:hidden;padding:1.5rem;text-align:center;">
-          <img src="images/chemin vituel.png" alt="Chemin virtuel de l'onde ultrasonore" style="width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;">
-        </div>
-        <div style="background:var(--mpaper2);border:1px solid var(--mborder);border-radius:12px;overflow:hidden;padding:1.5rem;text-align:center;">
-          <img src="images/apprentissage et surveillance.png" alt="Apprentissage et surveillance" style="width:100%;height:auto;display:block;margin:0 auto;border-radius:8px;">
-        </div>
+      <p class="mon-ed-lead">Chaque nouvelle mesure est comparée à une mesure de référence, réalisée sur la structure saine, qui fixe des seuils de tolérance. Tant que la mesure reste dans ces seuils, la structure est considérée comme saine ; si elle les dépasse, une anomalie est détectée et une alerte est déclenchée.</p>
+      <figure class="mon-anim">
+        <svg class="mon-anim-svg" id="mon-anim-svg" viewBox="0 0 960 560" role="img" aria-labelledby="mon-anim-t mon-anim-d">
+          <title id="mon-anim-t">Animation du principe de monitoring par ondes ultrasonores guidées</title>
+          <desc id="mon-anim-d">Le PC commande le système TPAC PILOT, qui envoie une impulsion électrique au capteur émetteur collé sur le fuselage du Boeing 707, sous la porte. Des ondes ultrasonores guidées se propagent dans la tôle jusqu’au capteur récepteur, situé à 540 mm, qui les convertit en signal électrique. Ce signal revient au TPAC PILOT puis au PC, où il est comparé au signal de référence.</desc>
+          <defs>
+            <linearGradient id="ma-metal" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#d5d8dc"/><stop offset=".45" stop-color="#b3b8be"/><stop offset=".55" stop-color="#c3c7cc"/><stop offset="1" stop-color="#959ba2"/>
+            </linearGradient>
+            <pattern id="ma-rivH" width="14" height="6" patternUnits="userSpaceOnUse"><circle cx="7" cy="3" r="1.8" fill="#7d838a"/><circle cx="6.5" cy="2.5" r=".8" fill="#e9ebee"/></pattern>
+            <pattern id="ma-rivV" width="6" height="14" patternUnits="userSpaceOnUse"><circle cx="3" cy="7" r="1.8" fill="#7d838a"/><circle cx="2.5" cy="6.5" r=".8" fill="#e9ebee"/></pattern>
+            <clipPath id="ma-clip"><rect x="40" y="120" width="580" height="320" rx="10"/></clipPath>
+            <filter id="ma-wglow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <radialGradient id="ma-glow"><stop offset="0" stop-color="#5ee7ff" stop-opacity=".9"/><stop offset="1" stop-color="#5ee7ff" stop-opacity="0"/></radialGradient>
+          </defs>
+          <rect width="960" height="560" rx="14" fill="#0f1d33"/>
+
+          <!-- Boeing 707 (profil) + zone surveillée -->
+          <g transform="translate(40,26)">
+            <path d="M6,44 C6,35 16,30 34,30 L222,30 L238,6 L252,6 L248,30 L262,30 L262,36 L250,38 L246,46 L34,48 C16,48 6,47 6,44 Z" fill="#dfe5ec"/>
+            <path d="M100,44 L160,44 L178,52 L118,52 Z" fill="#b9c3cf"/>
+            <rect x="118" y="50" width="22" height="7" rx="3.5" fill="#9aa6b4"/><rect x="146" y="50" width="22" height="7" rx="3.5" fill="#9aa6b4"/>
+            <path d="M14,37 L24,34 L24,38 Z" fill="#1d3557"/>
+            <g fill="#1d3557"><rect x="30" y="34" width="3" height="3" rx="1"/><rect x="38" y="34" width="3" height="3" rx="1"/><rect x="46" y="34" width="3" height="3" rx="1"/><rect x="54" y="34" width="3" height="3" rx="1"/><rect x="62" y="34" width="3" height="3" rx="1"/><rect x="70" y="34" width="3" height="3" rx="1"/><rect x="78" y="34" width="3" height="3" rx="1"/><rect x="86" y="34" width="3" height="3" rx="1"/><rect x="94" y="34" width="3" height="3" rx="1"/><rect x="102" y="34" width="3" height="3" rx="1"/><rect x="110" y="34" width="3" height="3" rx="1"/><rect x="118" y="34" width="3" height="3" rx="1"/><rect x="126" y="34" width="3" height="3" rx="1"/><rect x="134" y="34" width="3" height="3" rx="1"/><rect x="142" y="34" width="3" height="3" rx="1"/><rect x="150" y="34" width="3" height="3" rx="1"/><rect x="158" y="34" width="3" height="3" rx="1"/><rect x="166" y="34" width="3" height="3" rx="1"/><rect x="174" y="34" width="3" height="3" rx="1"/><rect x="182" y="34" width="3" height="3" rx="1"/><rect x="190" y="34" width="3" height="3" rx="1"/><rect x="198" y="34" width="3" height="3" rx="1"/><rect x="206" y="34" width="3" height="3" rx="1"/><rect x="214" y="34" width="3" height="3" rx="1"/></g>
+            <rect x="34" y="31" width="7" height="12" rx="1.5" fill="#dfe5ec" stroke="#1d3557" stroke-width="1.2"/>
+            <rect x="32" y="41" width="12" height="7" fill="none" stroke="#ffb347" stroke-width="1.8">
+              <animate attributeName="stroke-opacity" values="1;.35;1" dur="1.6s" repeatCount="indefinite"/>
+            </rect>
+          </g>
+          <path d="M72,74 L40,120 M84,74 L620,120" stroke="#ffb347" stroke-width="1" stroke-dasharray="4 4" opacity=".7"/>
+          <text x="330" y="56" class="ma-lbl">Boeing 707 « Château de Maintenon »</text>
+          <text x="330" y="80" class="ma-sub">Zone surveillée : fuselage sous la porte</text>
+
+          <!-- Panneau de fuselage -->
+          <rect x="40" y="120" width="580" height="320" rx="10" fill="url(#ma-metal)"/>
+          <g clip-path="url(#ma-clip)">
+            <path d="M190,120 V178 Q190,198 210,198 H450 Q470,198 470,178 V120" fill="#a9afb6" stroke="#6f767e" stroke-width="2"/>
+            <path d="M200,120 V176 Q200,188 212,188 H448 Q460,188 460,176 V120" fill="none" stroke="#868c94" stroke-width="1"/>
+            <rect x="180" y="205" width="300" height="6" fill="url(#ma-rivH)"/>
+            <rect x="40" y="250" width="580" height="6" fill="url(#ma-rivH)"/>
+            <line x1="40" y1="262" x2="620" y2="262" stroke="#8b9198" stroke-width="1"/>
+            <rect x="40" y="415" width="580" height="6" fill="url(#ma-rivH)"/>
+            <rect x="92" y="120" width="6" height="320" fill="url(#ma-rivV)"/>
+            <rect x="562" y="120" width="6" height="320" fill="url(#ma-rivV)"/>
+            <g fill="none" stroke="#5ee7ff" filter="url(#ma-wglow)">
+              <circle cx="180" cy="330" r="0" stroke-width="4">
+                <animate attributeName="r" values="0;0;360;360" keyTimes="0;.1875;.5625;1" dur="8s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.1874;.1875;.5063;.5625;1" dur="8s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="180" cy="330" r="0" stroke-width="3.2">
+                <animate attributeName="r" values="0;0;360;360" keyTimes="0;.225;.6;1" dur="8s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0;0.75;0.75;0;0" keyTimes="0;.2249;.225;.5438;.6;1" dur="8s" repeatCount="indefinite"/>
+              </circle>
+              <circle cx="180" cy="330" r="0" stroke-width="2.4">
+                <animate attributeName="r" values="0;0;360;360" keyTimes="0;.2625;.6375;1" dur="8s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0;0;0.5;0.5;0;0" keyTimes="0;.2624;.2625;.5813;.6375;1" dur="8s" repeatCount="indefinite"/>
+              </circle>
+            </g>
+          </g>
+          <text x="330" y="160" class="ma-dark" text-anchor="middle">Porte</text>
+
+          <!-- Capteurs piézoélectriques -->
+          <circle cx="180" cy="330" r="34" fill="url(#ma-glow)" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;.15;.2;.32;1" dur="8s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="480" cy="330" r="34" fill="url(#ma-glow)" opacity="0">
+            <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;.5;.54;.66;1" dur="8s" repeatCount="indefinite"/>
+          </circle>
+          <rect x="163" y="313" width="34" height="34" rx="5" fill="#1f2a37" stroke="#0b1320"/><circle cx="180" cy="330" r="10" fill="#d4a24c"/><circle cx="180" cy="330" r="4" fill="#f1d38a"/>
+          <rect x="463" y="313" width="34" height="34" rx="5" fill="#1f2a37" stroke="#0b1320"/><circle cx="480" cy="330" r="10" fill="#d4a24c"/><circle cx="480" cy="330" r="4" fill="#f1d38a"/>
+          <text x="180" y="300" class="ma-dark" text-anchor="middle">Émetteur</text>
+          <text x="480" y="300" class="ma-dark" text-anchor="middle">Récepteur</text>
+          <g stroke="#1f2a37" stroke-width="1.4">
+            <line x1="180" y1="372" x2="480" y2="372"/><line x1="180" y1="364" x2="180" y2="380"/><line x1="480" y1="364" x2="480" y2="380"/>
+          </g>
+          <path d="M180,372 l9,-4 v8 z M480,372 l-9,-4 v8 z" fill="#1f2a37"/>
+          <rect x="296" y="380" width="68" height="22" rx="4" fill="#e8eaed"/>
+          <text x="330" y="396" class="ma-dark" text-anchor="middle">540 mm</text>
+
+          <!-- Câbles -->
+          <g fill="none" stroke="#2a3a52" stroke-width="5" stroke-linecap="round"><path d="M180,347 C230,500 520,500 660,452"/><path d="M480,347 C500,410 580,428 660,428"/><path d="M810,298 C810,340 770,350 760,400"/></g>
+          <g fill="none" stroke="#3d516e" stroke-width="1.5" stroke-linecap="round"><path d="M180,347 C230,500 520,500 660,452"/><path d="M480,347 C500,410 580,428 660,428"/><path d="M810,298 C810,340 770,350 760,400"/></g>
+
+          <!-- TPAC PILOT -->
+          <rect x="660" y="400" width="160" height="64" rx="8" fill="#26303d" stroke="#46566c"/>
+          <rect x="672" y="412" width="56" height="8" rx="2" fill="#3b4a5e"/>
+          <circle cx="796" cy="416" r="4" fill="#34d399"><animate attributeName="opacity" values=".3;1;.3" dur="1s" repeatCount="indefinite"/></circle>
+          <text x="740" y="448" class="ma-lbl" text-anchor="middle" style="font-size:15px">TPAC PILOT</text>
+
+          <!-- PC -->
+          <rect x="690" y="132" width="240" height="152" rx="9" fill="#26303d" stroke="#46566c"/>
+          <rect x="700" y="142" width="220" height="132" rx="3" fill="#07111f"/>
+          <path d="M670,284 H950 L940,298 H680 Z" fill="#3b4a5e"/>
+          <text x="708" y="160" class="ma-scr">Acquisition — signal reçu</text>
+          <line x1="708" y1="222" x2="912" y2="222" stroke="#1d2c42"/>
+          <line x1="708" y1="172" x2="708" y2="266" stroke="#1d2c42"/>
+          <path d="M708.0,222.0 L708.8,222.0 L709.6,222.0 L710.4,222.0 L711.1,222.0 L711.9,222.0 L712.7,222.0 L713.5,222.0 L714.3,222.0 L715.1,222.0 L715.8,222.0 L716.6,222.0 L717.4,222.0 L718.2,222.1 L719.0,222.1 L719.8,221.8 L720.6,221.3 L721.3,221.6 L722.1,223.1 L722.9,224.3 L723.7,222.8 L724.5,218.9 L725.3,217.2 L726.0,221.3 L726.8,227.6 L727.6,228.5 L728.4,222.0 L729.2,215.5 L730.0,216.4 L730.8,222.7 L731.5,226.8 L732.3,225.1 L733.1,221.2 L733.9,219.7 L734.7,220.9 L735.5,222.4 L736.2,222.7 L737.0,222.2 L737.8,221.9 L738.6,221.9 L739.4,222.0 L740.2,222.0 L741.0,222.0 L741.7,222.0 L742.5,222.0 L743.3,222.0 L744.1,222.0 L744.9,222.0 L745.7,222.0 L746.4,222.0 L747.2,222.0 L748.0,222.0 L748.8,222.0 L749.6,222.0 L750.4,222.0 L751.2,222.0 L751.9,222.0 L752.7,222.0 L753.5,222.0 L754.3,222.0 L755.1,222.0 L755.9,222.0 L756.6,222.0 L757.4,222.0 L758.2,222.0 L759.0,222.0 L759.8,222.0 L760.6,222.0 L761.4,222.0 L762.1,222.0 L762.9,222.0 L763.7,222.0 L764.5,222.0 L765.3,222.0 L766.1,222.0 L766.8,222.0 L767.6,222.0 L768.4,222.0 L769.2,222.0 L770.0,222.0 L770.8,222.0 L771.6,222.0 L772.3,222.0 L773.1,222.0 L773.9,222.0 L774.7,222.0 L775.5,222.0 L776.3,222.0 L777.0,222.0 L777.8,222.0 L778.6,222.0 L779.4,222.0 L780.2,222.0 L781.0,222.0 L781.8,222.0 L782.5,222.0 L783.3,222.0 L784.1,221.9 L784.9,221.9 L785.7,222.0 L786.5,222.1 L787.2,222.2 L788.0,222.2 L788.8,222.0 L789.6,221.8 L790.4,221.6 L791.2,221.6 L792.0,221.9 L792.7,222.5 L793.5,223.0 L794.3,223.0 L795.1,222.3 L795.9,221.1 L796.7,219.9 L797.4,219.8 L798.2,221.2 L799.0,223.7 L799.8,225.9 L800.6,226.2 L801.4,223.7 L802.2,219.2 L802.9,215.2 L803.7,214.6 L804.5,218.7 L805.3,226.1 L806.1,232.7 L806.9,233.9 L807.6,227.6 L808.4,216.5 L809.2,206.6 L810.0,204.7 L810.8,213.2 L811.6,228.6 L812.4,242.1 L813.1,245.1 L813.9,234.3 L814.7,215.0 L815.5,198.1 L816.3,194.1 L817.1,206.4 L817.8,228.6 L818.6,247.9 L819.4,252.7 L820.2,239.9 L821.0,216.6 L821.8,196.5 L822.6,191.2 L823.3,203.4 L824.1,225.7 L824.9,244.8 L825.7,250.2 L826.5,239.6 L827.3,220.1 L828.0,203.4 L828.8,198.6 L829.6,207.0 L830.4,222.5 L831.2,235.8 L832.0,239.8 L832.8,233.7 L833.5,222.3 L834.3,212.8 L835.1,209.8 L835.9,213.8 L836.7,221.3 L837.5,227.6 L838.2,229.7 L839.0,227.3 L839.8,222.7 L840.6,218.9 L841.4,217.6 L842.2,218.9 L843.0,221.5 L843.7,223.6 L844.5,224.3 L845.3,223.6 L846.1,222.4 L846.9,221.3 L847.7,220.9 L848.4,221.2 L849.2,221.8 L850.0,222.3 L850.8,222.5 L851.6,222.3 L852.4,222.1 L853.2,221.9 L853.9,221.8 L854.7,221.9 L855.5,222.0 L856.3,222.0 L857.1,222.1 L857.9,222.1 L858.6,222.0 L859.4,222.0 L860.2,222.0 L861.0,222.0 L861.8,222.0 L862.6,222.0 L863.4,222.0 L864.1,222.0 L864.9,222.0 L865.7,222.0 L866.5,222.0 L867.3,222.0 L868.1,222.0 L868.8,222.0 L869.6,222.0 L870.4,222.0 L871.2,222.0 L872.0,222.0 L872.8,222.0 L873.6,222.0 L874.3,222.0 L875.1,222.0 L875.9,222.0 L876.7,222.0 L877.5,222.0 L878.3,222.0 L879.0,222.0 L879.8,222.0 L880.6,222.0 L881.4,222.0 L882.2,222.0 L883.0,222.0 L883.8,222.0 L884.5,222.0 L885.3,222.0 L886.1,222.0 L886.9,222.0 L887.7,222.0 L888.5,222.0 L889.2,222.0 L890.0,222.0 L890.8,222.0 L891.6,222.0 L892.4,222.0 L893.2,222.0 L894.0,222.0 L894.7,222.0 L895.5,222.0 L896.3,222.0 L897.1,222.0 L897.9,222.0 L898.7,222.0 L899.4,222.0 L900.2,222.0 L901.0,222.0 L901.8,222.0 L902.6,222.0 L903.4,222.0 L904.2,222.0 L904.9,222.0 L905.7,222.0 L906.5,222.0 L907.3,222.0 L908.1,222.0 L908.9,222.0 L909.6,222.0 L910.4,222.0 L911.2,222.0 L912.0,222.0" fill="none" stroke="#6b7a90" stroke-width="1.2" stroke-dasharray="3 3" opacity="0">
+            <animate attributeName="opacity" values="0;0;.9;.9;0" keyTimes="0;.74;.76;.98;1" dur="8s" repeatCount="indefinite"/>
+          </path>
+          <path d="M708.0,222.0 L708.8,222.0 L709.6,222.0 L710.4,222.0 L711.1,222.0 L711.9,222.0 L712.7,222.0 L713.5,222.0 L714.3,222.0 L715.1,222.0 L715.8,222.0 L716.6,222.0 L717.4,222.0 L718.2,222.1 L719.0,222.1 L719.8,221.8 L720.6,221.3 L721.3,221.6 L722.1,223.1 L722.9,224.3 L723.7,222.8 L724.5,218.9 L725.3,217.2 L726.0,221.3 L726.8,227.6 L727.6,228.5 L728.4,222.0 L729.2,215.5 L730.0,216.4 L730.8,222.7 L731.5,226.8 L732.3,225.1 L733.1,221.2 L733.9,219.7 L734.7,220.9 L735.5,222.4 L736.2,222.7 L737.0,222.2 L737.8,221.9 L738.6,221.9 L739.4,222.0 L740.2,222.0 L741.0,222.0 L741.7,222.0 L742.5,222.0 L743.3,222.0 L744.1,222.0 L744.9,222.0 L745.7,222.0 L746.4,222.0 L747.2,222.0 L748.0,222.0 L748.8,222.0 L749.6,222.0 L750.4,222.0 L751.2,222.0 L751.9,222.0 L752.7,222.0 L753.5,222.0 L754.3,222.0 L755.1,222.0 L755.9,222.0 L756.6,222.0 L757.4,222.0 L758.2,222.0 L759.0,222.0 L759.8,222.0 L760.6,222.0 L761.4,222.0 L762.1,222.0 L762.9,222.0 L763.7,222.0 L764.5,222.0 L765.3,222.0 L766.1,222.0 L766.8,222.0 L767.6,222.0 L768.4,222.0 L769.2,222.0 L770.0,222.0 L770.8,222.0 L771.6,222.0 L772.3,222.0 L773.1,222.0 L773.9,222.0 L774.7,222.0 L775.5,222.0 L776.3,222.0 L777.0,222.0 L777.8,222.0 L778.6,222.0 L779.4,222.0 L780.2,222.0 L781.0,222.0 L781.8,222.0 L782.5,222.0 L783.3,222.0 L784.1,222.0 L784.9,222.0 L785.7,222.0 L786.5,222.1 L787.2,222.1 L788.0,222.1 L788.8,221.9 L789.6,221.7 L790.4,221.6 L791.2,221.8 L792.0,222.3 L792.7,222.8 L793.5,223.0 L794.3,222.5 L795.1,221.4 L795.9,220.3 L796.7,219.9 L797.4,220.9 L798.2,223.1 L799.0,225.4 L799.8,226.2 L800.6,224.4 L801.4,220.3 L802.2,216.0 L802.9,214.4 L803.7,217.4 L804.5,224.4 L805.3,231.7 L806.1,234.5 L806.9,229.8 L807.6,219.0 L808.4,207.8 L809.2,203.5 L810.0,210.0 L810.8,225.2 L811.6,240.7 L812.4,247.0 L813.1,238.7 L813.9,219.3 L814.7,199.6 L815.5,191.6 L816.3,201.1 L817.1,223.6 L817.8,246.2 L818.6,255.6 L819.4,245.7 L820.2,222.0 L821.0,198.3 L821.8,188.4 L822.6,197.8 L823.3,220.4 L824.1,242.9 L824.9,252.4 L825.7,244.4 L826.5,224.7 L827.3,205.3 L828.0,197.0 L828.8,203.3 L829.6,218.8 L830.4,234.0 L831.2,240.5 L832.0,236.2 L832.8,225.0 L833.5,214.2 L834.3,209.5 L835.1,212.3 L835.9,219.6 L836.7,226.6 L837.5,229.6 L838.2,228.0 L839.0,223.7 L839.8,219.6 L840.6,217.8 L841.4,218.6 L842.2,220.9 L843.0,223.1 L843.7,224.1 L844.5,223.7 L845.3,222.6 L846.1,221.5 L846.9,221.0 L847.7,221.2 L848.4,221.7 L849.2,222.2 L850.0,222.4 L850.8,222.3 L851.6,222.1 L852.4,221.9 L853.2,221.9 L853.9,221.9 L854.7,222.0 L855.5,222.0 L856.3,222.0 L857.1,222.0 L857.9,222.0 L858.6,222.0 L859.4,222.0 L860.2,222.0 L861.0,222.0 L861.8,222.0 L862.6,222.0 L863.4,222.0 L864.1,222.0 L864.9,222.0 L865.7,222.0 L866.5,222.0 L867.3,222.0 L868.1,222.0 L868.8,222.0 L869.6,222.0 L870.4,222.0 L871.2,222.0 L872.0,222.0 L872.8,222.0 L873.6,222.0 L874.3,222.0 L875.1,222.0 L875.9,222.0 L876.7,222.0 L877.5,222.0 L878.3,222.0 L879.0,222.0 L879.8,222.0 L880.6,222.0 L881.4,222.0 L882.2,222.0 L883.0,222.0 L883.8,222.0 L884.5,222.0 L885.3,222.0 L886.1,222.0 L886.9,222.0 L887.7,222.0 L888.5,222.0 L889.2,222.0 L890.0,222.0 L890.8,222.0 L891.6,222.0 L892.4,222.0 L893.2,222.0 L894.0,222.0 L894.7,222.0 L895.5,222.0 L896.3,222.0 L897.1,222.0 L897.9,222.0 L898.7,222.0 L899.4,222.0 L900.2,222.0 L901.0,222.0 L901.8,222.0 L902.6,222.0 L903.4,222.0 L904.2,222.0 L904.9,222.0 L905.7,222.0 L906.5,222.0 L907.3,222.0 L908.1,222.0 L908.9,222.0 L909.6,222.0 L910.4,222.0 L911.2,222.0 L912.0,222.0" fill="none" stroke="#5ee7ff" stroke-width="1.6" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1">
+            <animate attributeName="stroke-dashoffset" values="1;1;0;0;1" keyTimes="0;.75;.92;.98;1" dur="8s" repeatCount="indefinite"/>
+          </path>
+          <g opacity="0">
+            <animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.9;.92;.98;1" dur="8s" repeatCount="indefinite"/>
+            <rect x="776" y="244" width="136" height="24" rx="4" fill="#0f3d2e"/>
+            <text x="844" y="261" class="ma-scr ma-ok" text-anchor="middle">✓ Dans les seuils</text>
+          </g>
+
+          <!-- Impulsions électriques -->
+          <circle r="6" fill="#ffd166" opacity="0">
+            <animateMotion dur="8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.02;.18;1" calcMode="linear" path="M810,298 C810,340 770,350 760,400 L700,452 L660,452 C520,500 230,500 180,347"/>
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.019;.02;.18;.181;1" dur="8s" repeatCount="indefinite"/>
+          </circle>
+          <circle r="6" fill="#ffd166" opacity="0">
+            <animateMotion dur="8s" repeatCount="indefinite" keyPoints="0;0;1;1" keyTimes="0;.55;.74;1" calcMode="linear" path="M480,347 C500,410 580,428 660,428 L740,420 L760,400 C770,350 810,340 810,298"/>
+            <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.549;.55;.74;.741;1" dur="8s" repeatCount="indefinite"/>
+          </circle>
+
+          <!-- Étapes -->
+            <rect x="40" y="492" width="210" height="44" rx="22" fill="#1b2b45" stroke="#2f4566">
+              <animate attributeName="fill" values="#1f6f8b;#1f6f8b;#1b2b45;#1b2b45" keyTimes="0;0.1875;0.1885;1" dur="8s" repeatCount="indefinite"/>
+            </rect>
+            <text x="145" y="519" class="ma-step" text-anchor="middle">1 · Excitation électrique</text>
+            <rect x="262" y="492" width="210" height="44" rx="22" fill="#1b2b45" stroke="#2f4566">
+              <animate attributeName="fill" values="#1b2b45;#1b2b45;#1f6f8b;#1f6f8b;#1b2b45;#1b2b45" keyTimes="0;0.1875;0.1885;0.55;0.551;1" dur="8s" repeatCount="indefinite"/>
+            </rect>
+            <text x="367" y="519" class="ma-step" text-anchor="middle">2 · Propagation des ondes</text>
+            <rect x="484" y="492" width="210" height="44" rx="22" fill="#1b2b45" stroke="#2f4566">
+              <animate attributeName="fill" values="#1b2b45;#1b2b45;#1f6f8b;#1f6f8b;#1b2b45;#1b2b45" keyTimes="0;0.55;0.551;0.74;0.741;1" dur="8s" repeatCount="indefinite"/>
+            </rect>
+            <text x="589" y="519" class="ma-step" text-anchor="middle">3 · Réception</text>
+            <rect x="706" y="492" width="210" height="44" rx="22" fill="#1b2b45" stroke="#2f4566">
+              <animate attributeName="fill" values="#1b2b45;#1b2b45;#1f6f8b;#1f6f8b;#1b2b45;#1b2b45" keyTimes="0;0.74;0.741;0.998;0.999;1" dur="8s" repeatCount="indefinite"/>
+            </rect>
+            <text x="811" y="519" class="ma-step" text-anchor="middle">4 · Acquisition et analyse</text>
+        </svg>
+        <figcaption class="mon-anim-cap">Schéma de principe, échelles non respectées.</figcaption>
+      </figure>
+      <p class="mon-ed-lead mon-ed-lead--after">Le PC pilote le système TPAC PILOT, qui excite le capteur émetteur ; les ondes guidées traversent la tôle du fuselage jusqu’au capteur récepteur, dont le signal électrique revient au PC pour analyse. Ce fonctionnement se déroule en deux étapes, détaillées ci-dessous : <span class="mon-num">1</span> la génération, la propagation et la réception des ondes ultrasonores guidées, puis <span class="mon-num">2</span> l’analyse des données.</p>
+      <div class="mon-illus-grid">
+        <figure class="mon-illus">
+          <div class="mon-illus-img">
+            <img src="images/chemin vituel.png" alt="Chemin virtuel de l'onde ultrasonore entre le capteur émetteur et le capteur récepteur">
+          </div>
+          <figcaption>
+            <h3 class="mon-illus-title"><span class="mon-num">1</span>Génération, propagation et réception des ondes ultrasonores guidées</h3>
+            <p class="mon-illus-text">Lorsqu’une tension alternative est appliquée au capteur piézoélectrique émetteur, celui-ci se déforme périodiquement et génère des ondes ultrasonores qui se propagent dans la structure. Au cours de leur propagation, ces ondes sont influencées par l’état de la structure et se chargent ainsi d’informations relatives à la présence éventuelle de défauts ou de dégradations. Le capteur récepteur convertit ensuite les vibrations mécaniques en un signal électrique exploitable. Ce signal est enfin traité et analysé afin de détecter d’éventuelles anomalies et de statuer sur l’état de santé de la structure.</p>
+          </figcaption>
+        </figure>
+        <figure class="mon-illus">
+          <div class="mon-illus-img">
+            <svg class="mon-analysis-svg" viewBox="0 0 440 312" role="img" aria-labelledby="mon-an-t">
+              <title id="mon-an-t">Exemple illustratif : signal mesuré comparé à la référence et à son enveloppe de seuils, puis indicateur d’endommagement par campagne de mesure</title>
+              <text x="20" y="22" class="ma-ct">Signal mesuré et référence</text>
+              <path d="M50.0,85.1 L51.8,85.1 L53.5,85.1 L55.2,85.1 L57.0,85.1 L58.8,85.1 L60.5,85.1 L62.2,85.0 L64.0,84.9 L65.8,84.8 L67.5,84.5 L69.2,84.0 L71.0,83.3 L72.8,82.4 L74.5,81.2 L76.2,79.8 L78.0,78.3 L79.8,76.9 L81.5,75.7 L83.2,74.8 L85.0,74.6 L86.8,74.8 L88.5,75.7 L90.2,76.9 L92.0,78.3 L93.8,79.8 L95.5,81.2 L97.2,82.4 L99.0,83.3 L100.8,84.0 L102.5,84.5 L104.2,84.8 L106.0,84.9 L107.8,85.0 L109.5,85.1 L111.2,85.1 L113.0,85.1 L114.8,85.1 L116.5,85.1 L118.2,85.1 L120.0,85.1 L121.8,85.1 L123.5,85.1 L125.2,85.1 L127.0,85.1 L128.8,85.1 L130.5,85.1 L132.2,85.1 L134.0,85.1 L135.8,85.1 L137.5,85.1 L139.2,85.1 L141.0,85.1 L142.8,85.1 L144.5,85.1 L146.2,85.1 L148.0,85.1 L149.8,85.1 L151.5,85.1 L153.2,85.1 L155.0,85.1 L156.8,85.1 L158.5,85.1 L160.2,85.1 L162.0,85.1 L163.8,85.1 L165.5,85.1 L167.2,85.1 L169.0,85.1 L170.8,85.1 L172.5,85.0 L174.2,85.0 L176.0,85.0 L177.8,84.9 L179.5,84.8 L181.2,84.7 L183.0,84.6 L184.8,84.5 L186.5,84.3 L188.2,84.0 L190.0,83.7 L191.8,83.4 L193.5,82.9 L195.2,82.4 L197.0,81.7 L198.8,81.0 L200.5,80.1 L202.2,79.0 L204.0,77.8 L205.8,76.4 L207.5,74.9 L209.2,73.1 L211.0,71.2 L212.8,69.1 L214.5,66.8 L216.2,64.3 L218.0,61.7 L219.8,59.0 L221.5,56.2 L223.2,53.3 L225.0,50.5 L226.8,47.6 L228.5,44.8 L230.2,42.2 L232.0,39.8 L233.8,37.6 L235.5,35.6 L237.2,34.0 L239.0,32.8 L240.8,31.9 L242.5,31.4 L244.2,31.4 L246.0,31.8 L247.8,32.6 L249.5,33.7 L251.2,35.3 L253.0,37.1 L254.8,39.3 L256.5,41.7 L258.2,44.3 L260.0,47.1 L261.8,49.9 L263.5,52.8 L265.2,55.6 L267.0,58.5 L268.8,61.2 L270.5,63.8 L272.2,66.3 L274.0,68.6 L275.8,70.8 L277.5,72.8 L279.2,74.5 L281.0,76.1 L282.8,77.5 L284.5,78.8 L286.2,79.9 L288.0,80.8 L289.8,81.6 L291.5,82.3 L293.2,82.8 L295.0,83.3 L296.8,83.7 L298.5,84.0 L300.2,84.2 L302.0,84.4 L303.8,84.6 L305.5,84.7 L307.2,84.8 L309.0,84.9 L310.8,85.0 L312.5,85.0 L314.2,85.0 L316.0,85.1 L317.8,85.1 L319.5,85.1 L321.2,85.1 L323.0,85.1 L324.8,85.1 L326.5,85.1 L328.2,85.1 L330.0,85.1 L331.8,85.1 L333.5,85.1 L335.2,85.1 L337.0,85.1 L338.8,85.1 L340.5,85.1 L342.2,85.1 L344.0,85.1 L345.8,85.1 L347.5,85.1 L349.2,85.1 L351.0,85.1 L352.8,85.1 L354.5,85.1 L356.2,85.1 L358.0,85.1 L359.8,85.1 L361.5,85.1 L363.2,85.1 L365.0,85.1 L366.8,85.1 L368.5,85.1 L370.2,85.1 L372.0,85.1 L373.8,85.1 L375.5,85.1 L377.2,85.1 L379.0,85.1 L380.8,85.1 L382.5,85.1 L384.2,85.1 L386.0,85.1 L387.8,85.1 L389.5,85.1 L391.2,85.1 L393.0,85.1 L394.8,85.1 L396.5,85.1 L398.2,85.1 L400.0,85.1 L400.0,90.9 L398.2,90.9 L396.5,90.9 L394.8,90.9 L393.0,90.9 L391.2,90.9 L389.5,90.9 L387.8,90.9 L386.0,90.9 L384.2,90.9 L382.5,90.9 L380.8,90.9 L379.0,90.9 L377.2,90.9 L375.5,90.9 L373.8,90.9 L372.0,90.9 L370.2,90.9 L368.5,90.9 L366.8,90.9 L365.0,90.9 L363.2,90.9 L361.5,90.9 L359.8,90.9 L358.0,90.9 L356.2,90.9 L354.5,90.9 L352.8,90.9 L351.0,90.9 L349.2,90.9 L347.5,90.9 L345.8,90.9 L344.0,90.9 L342.2,90.9 L340.5,90.9 L338.8,90.9 L337.0,90.9 L335.2,90.9 L333.5,90.9 L331.8,90.9 L330.0,90.9 L328.2,90.9 L326.5,90.9 L324.8,90.9 L323.0,90.9 L321.2,90.9 L319.5,90.9 L317.8,90.9 L316.0,90.9 L314.2,91.0 L312.5,91.0 L310.8,91.0 L309.0,91.1 L307.2,91.2 L305.5,91.3 L303.8,91.4 L302.0,91.6 L300.2,91.8 L298.5,92.0 L296.8,92.3 L295.0,92.7 L293.2,93.2 L291.5,93.7 L289.8,94.4 L288.0,95.2 L286.2,96.1 L284.5,97.2 L282.8,98.5 L281.0,99.9 L279.2,101.5 L277.5,103.2 L275.8,105.2 L274.0,107.4 L272.2,109.7 L270.5,112.2 L268.8,114.8 L267.0,117.5 L265.2,120.4 L263.5,123.2 L261.8,126.1 L260.0,128.9 L258.2,131.7 L256.5,134.3 L254.8,136.7 L253.0,138.9 L251.2,140.7 L249.5,142.3 L247.8,143.4 L246.0,144.2 L244.2,144.6 L242.5,144.6 L240.8,144.1 L239.0,143.2 L237.2,142.0 L235.5,140.4 L233.8,138.4 L232.0,136.2 L230.2,133.8 L228.5,131.2 L226.8,128.4 L225.0,125.5 L223.2,122.7 L221.5,119.8 L219.8,117.0 L218.0,114.3 L216.2,111.7 L214.5,109.2 L212.8,106.9 L211.0,104.8 L209.2,102.9 L207.5,101.1 L205.8,99.6 L204.0,98.2 L202.2,97.0 L200.5,95.9 L198.8,95.0 L197.0,94.3 L195.2,93.6 L193.5,93.1 L191.8,92.6 L190.0,92.3 L188.2,92.0 L186.5,91.7 L184.8,91.5 L183.0,91.4 L181.2,91.3 L179.5,91.2 L177.8,91.1 L176.0,91.0 L174.2,91.0 L172.5,91.0 L170.8,90.9 L169.0,90.9 L167.2,90.9 L165.5,90.9 L163.8,90.9 L162.0,90.9 L160.2,90.9 L158.5,90.9 L156.8,90.9 L155.0,90.9 L153.2,90.9 L151.5,90.9 L149.8,90.9 L148.0,90.9 L146.2,90.9 L144.5,90.9 L142.8,90.9 L141.0,90.9 L139.2,90.9 L137.5,90.9 L135.8,90.9 L134.0,90.9 L132.2,90.9 L130.5,90.9 L128.8,90.9 L127.0,90.9 L125.2,90.9 L123.5,90.9 L121.8,90.9 L120.0,90.9 L118.2,90.9 L116.5,90.9 L114.8,90.9 L113.0,90.9 L111.2,90.9 L109.5,90.9 L107.8,91.0 L106.0,91.1 L104.2,91.2 L102.5,91.5 L100.8,92.0 L99.0,92.7 L97.2,93.6 L95.5,94.8 L93.8,96.2 L92.0,97.7 L90.2,99.1 L88.5,100.3 L86.8,101.2 L85.0,101.4 L83.2,101.2 L81.5,100.3 L79.8,99.1 L78.0,97.7 L76.2,96.2 L74.5,94.8 L72.8,93.6 L71.0,92.7 L69.2,92.0 L67.5,91.5 L65.8,91.2 L64.0,91.1 L62.2,91.0 L60.5,90.9 L58.8,90.9 L57.0,90.9 L55.2,90.9 L53.5,90.9 L51.8,90.9 L50.0,90.9 Z" class="ma-env"/>
+              <line x1="50" y1="88" x2="400" y2="88" class="ma-axis"/>
+              <path d="M50.0,88.0 L51.1,88.0 L52.2,88.0 L53.3,88.0 L54.4,88.0 L55.5,88.0 L56.6,88.0 L57.7,88.0 L58.8,88.0 L59.8,88.0 L60.9,88.0 L62.0,88.0 L63.1,88.0 L64.2,88.0 L65.3,88.0 L66.4,88.1 L67.5,88.2 L68.6,88.2 L69.7,87.9 L70.8,87.3 L71.9,87.0 L73.0,87.5 L74.1,89.2 L75.2,91.0 L76.2,90.7 L77.3,87.5 L78.4,83.0 L79.5,81.2 L80.6,84.9 L81.7,92.3 L82.8,97.7 L83.9,96.0 L85.0,88.0 L86.1,80.0 L87.2,78.3 L88.3,83.7 L89.4,91.1 L90.5,94.8 L91.6,93.0 L92.7,88.5 L93.8,85.3 L94.8,85.0 L95.9,86.8 L97.0,88.5 L98.1,89.0 L99.2,88.7 L100.3,88.1 L101.4,87.8 L102.5,87.8 L103.6,87.9 L104.7,88.0 L105.8,88.0 L106.9,88.0 L108.0,88.0 L109.1,88.0 L110.2,88.0 L111.2,88.0 L112.3,88.0 L113.4,88.0 L114.5,88.0 L115.6,88.0 L116.7,88.0 L117.8,88.0 L118.9,88.0 L120.0,88.0 L121.1,88.0 L122.2,88.0 L123.3,88.0 L124.4,88.0 L125.5,88.0 L126.6,88.0 L127.7,88.0 L128.8,88.0 L129.8,88.0 L130.9,88.0 L132.0,88.0 L133.1,88.0 L134.2,88.0 L135.3,88.0 L136.4,88.0 L137.5,88.0 L138.6,88.0 L139.7,88.0 L140.8,88.0 L141.9,88.0 L143.0,88.0 L144.1,88.0 L145.2,88.0 L146.2,88.0 L147.3,88.0 L148.4,88.0 L149.5,88.0 L150.6,88.0 L151.7,88.0 L152.8,88.0 L153.9,88.0 L155.0,88.0 L156.1,88.0 L157.2,88.0 L158.3,88.0 L159.4,88.0 L160.5,88.0 L161.6,88.0 L162.7,88.0 L163.8,88.0 L164.8,88.0 L165.9,88.0 L167.0,88.0 L168.1,88.0 L169.2,88.0 L170.3,88.0 L171.4,88.0 L172.5,88.0 L173.6,88.0 L174.7,88.0 L175.8,88.0 L176.9,88.0 L178.0,88.0 L179.1,88.0 L180.2,87.9 L181.2,87.9 L182.3,87.9 L183.4,88.0 L184.5,88.1 L185.6,88.2 L186.7,88.3 L187.8,88.2 L188.9,88.0 L190.0,87.7 L191.1,87.4 L192.2,87.3 L193.3,87.5 L194.4,88.0 L195.5,88.7 L196.6,89.3 L197.7,89.5 L198.8,89.1 L199.8,87.9 L200.9,86.4 L202.0,85.2 L203.1,84.8 L204.2,85.8 L205.3,88.1 L206.4,91.1 L207.5,93.5 L208.6,94.1 L209.7,92.2 L210.8,87.8 L211.9,82.4 L213.0,78.2 L214.1,77.3 L215.2,80.9 L216.2,88.3 L217.3,97.2 L218.4,103.9 L219.5,105.0 L220.6,99.1 L221.7,87.5 L222.8,74.2 L223.9,64.7 L225.0,63.5 L226.1,72.3 L227.2,88.7 L228.3,106.8 L229.4,119.2 L230.5,120.2 L231.6,108.2 L232.7,87.1 L233.8,64.7 L234.8,50.0 L235.9,49.6 L237.0,64.3 L238.1,89.1 L239.2,114.3 L240.3,130.1 L241.4,129.8 L242.5,113.3 L243.6,86.9 L244.7,60.9 L245.8,45.5 L246.9,46.6 L248.0,63.4 L249.1,89.1 L250.2,113.3 L251.2,127.0 L252.3,125.3 L253.4,109.7 L254.5,87.1 L255.6,66.4 L256.7,55.4 L257.8,57.4 L258.9,70.5 L260.0,88.7 L261.1,104.7 L262.2,112.8 L263.3,110.8 L264.4,100.8 L265.5,87.5 L266.6,76.2 L267.7,70.9 L268.8,72.5 L269.8,79.5 L270.9,88.3 L272.0,95.6 L273.1,98.8 L274.2,97.6 L275.3,93.2 L276.4,87.8 L277.5,83.6 L278.6,81.8 L279.7,82.6 L280.8,85.1 L281.9,88.1 L283.0,90.3 L284.1,91.2 L285.2,90.8 L286.2,89.4 L287.3,87.9 L288.4,86.9 L289.5,86.5 L290.6,86.7 L291.7,87.3 L292.8,88.0 L293.9,88.5 L295.0,88.7 L296.1,88.5 L297.2,88.3 L298.3,88.0 L299.4,87.8 L300.5,87.7 L301.6,87.8 L302.7,87.9 L303.8,88.0 L304.8,88.1 L305.9,88.1 L307.0,88.1 L308.1,88.0 L309.2,88.0 L310.3,88.0 L311.4,88.0 L312.5,88.0 L313.6,88.0 L314.7,88.0 L315.8,88.0 L316.9,88.0 L318.0,88.0 L319.1,88.0 L320.2,88.0 L321.2,88.0 L322.3,88.0 L323.4,88.0 L324.5,88.0 L325.6,88.0 L326.7,88.0 L327.8,88.0 L328.9,88.0 L330.0,88.0 L331.1,88.0 L332.2,88.0 L333.3,88.0 L334.4,88.0 L335.5,88.0 L336.6,88.0 L337.7,88.0 L338.8,88.0 L339.8,88.0 L340.9,88.0 L342.0,88.0 L343.1,88.0 L344.2,88.0 L345.3,88.0 L346.4,88.0 L347.5,88.0 L348.6,88.0 L349.7,88.0 L350.8,88.0 L351.9,88.0 L353.0,88.0 L354.1,88.0 L355.2,88.0 L356.2,88.0 L357.3,88.0 L358.4,88.0 L359.5,88.0 L360.6,88.0 L361.7,88.0 L362.8,88.0 L363.9,88.0 L365.0,88.0 L366.1,88.0 L367.2,88.0 L368.3,88.0 L369.4,88.0 L370.5,88.0 L371.6,88.0 L372.7,88.0 L373.8,88.0 L374.8,88.0 L375.9,88.0 L377.0,88.0 L378.1,88.0 L379.2,88.0 L380.3,88.0 L381.4,88.0 L382.5,88.0 L383.6,88.0 L384.7,88.0 L385.8,88.0 L386.9,88.0 L388.0,88.0 L389.1,88.0 L390.2,88.0 L391.2,88.0 L392.3,88.0 L393.4,88.0 L394.5,88.0 L395.6,88.0 L396.7,88.0 L397.8,88.0 L398.9,88.0 L400.0,88.0" class="ma-ref"/>
+              <path d="M50.0,88.0 L51.1,88.0 L52.2,88.0 L53.3,88.0 L54.4,88.0 L55.5,88.0 L56.6,88.0 L57.7,88.0 L58.8,88.0 L59.8,88.0 L60.9,88.0 L62.0,88.0 L63.1,88.0 L64.2,88.0 L65.3,88.0 L66.4,88.1 L67.5,88.2 L68.6,88.2 L69.7,87.9 L70.8,87.3 L71.9,87.0 L73.0,87.5 L74.1,89.2 L75.2,91.0 L76.2,90.7 L77.3,87.5 L78.4,83.0 L79.5,81.2 L80.6,84.9 L81.7,92.3 L82.8,97.7 L83.9,96.0 L85.0,88.0 L86.1,80.0 L87.2,78.3 L88.3,83.7 L89.4,91.1 L90.5,94.8 L91.6,93.0 L92.7,88.5 L93.8,85.3 L94.8,85.0 L95.9,86.8 L97.0,88.5 L98.1,89.0 L99.2,88.7 L100.3,88.1 L101.4,87.8 L102.5,87.8 L103.6,87.9 L104.7,88.0 L105.8,88.0 L106.9,88.0 L108.0,88.0 L109.1,88.0 L110.2,88.0 L111.2,88.0 L112.3,88.0 L113.4,88.0 L114.5,88.0 L115.6,88.0 L116.7,88.0 L117.8,88.0 L118.9,88.0 L120.0,88.0 L121.1,88.0 L122.2,88.0 L123.3,88.0 L124.4,88.0 L125.5,88.0 L126.6,88.0 L127.7,88.0 L128.8,88.0 L129.8,88.0 L130.9,88.0 L132.0,88.0 L133.1,88.0 L134.2,88.0 L135.3,88.0 L136.4,88.0 L137.5,88.0 L138.6,88.0 L139.7,88.0 L140.8,88.0 L141.9,88.0 L143.0,88.0 L144.1,88.0 L145.2,88.0 L146.2,88.0 L147.3,88.0 L148.4,88.0 L149.5,88.0 L150.6,88.0 L151.7,88.0 L152.8,88.0 L153.9,88.0 L155.0,88.0 L156.1,88.0 L157.2,88.0 L158.3,88.0 L159.4,88.0 L160.5,88.0 L161.6,88.0 L162.7,88.0 L163.8,88.0 L164.8,88.0 L165.9,88.0 L167.0,88.0 L168.1,88.0 L169.2,88.0 L170.3,88.0 L171.4,88.0 L172.5,88.0 L173.6,88.0 L174.7,88.0 L175.8,88.0 L176.9,88.0 L178.0,88.0 L179.1,87.9 L180.2,87.9 L181.2,87.9 L182.3,88.0 L183.4,88.1 L184.5,88.2 L185.6,88.2 L186.7,88.2 L187.8,88.0 L188.9,87.8 L190.0,87.5 L191.1,87.4 L192.2,87.6 L193.3,88.0 L194.4,88.6 L195.5,89.1 L196.6,89.4 L197.7,89.0 L198.8,88.0 L199.8,86.6 L200.9,85.4 L202.0,85.0 L203.1,85.9 L204.2,88.0 L205.3,90.8 L206.4,93.2 L207.5,93.9 L208.6,92.2 L209.7,88.0 L210.8,82.7 L211.9,78.4 L213.0,77.3 L214.1,80.7 L215.2,88.0 L216.2,97.0 L217.3,103.9 L218.4,105.4 L219.5,99.7 L220.6,88.0 L221.7,74.3 L222.8,64.1 L223.9,62.3 L225.0,71.1 L226.1,88.0 L227.2,107.1 L228.3,120.6 L229.4,122.3 L230.5,110.2 L231.6,88.0 L232.7,64.0 L233.8,47.8 L234.8,46.6 L235.9,61.7 L237.0,88.0 L238.1,115.3 L239.2,132.8 L240.3,133.3 L241.4,116.2 L242.5,88.0 L243.6,59.8 L244.7,42.7 L245.8,43.2 L246.9,60.7 L248.0,88.0 L249.1,114.3 L250.2,129.4 L251.2,128.2 L252.3,112.0 L253.4,88.0 L254.5,65.8 L255.6,53.7 L256.7,55.4 L257.8,68.9 L258.9,88.0 L260.0,104.9 L261.1,113.7 L262.2,111.9 L263.3,101.7 L264.4,88.0 L265.5,76.3 L266.6,70.6 L267.7,72.1 L268.8,79.0 L269.8,88.0 L270.9,95.3 L272.0,98.7 L273.1,97.6 L274.2,93.3 L275.3,88.0 L276.4,83.8 L277.5,82.1 L278.6,82.8 L279.7,85.2 L280.8,88.0 L281.9,90.1 L283.0,91.0 L284.1,90.6 L285.2,89.4 L286.2,88.0 L287.3,87.0 L288.4,86.6 L289.5,86.9 L290.6,87.4 L291.7,88.0 L292.8,88.4 L293.9,88.6 L295.0,88.5 L296.1,88.2 L297.2,88.0 L298.3,87.8 L299.4,87.8 L300.5,87.8 L301.6,87.9 L302.7,88.0 L303.8,88.1 L304.8,88.1 L305.9,88.1 L307.0,88.0 L308.1,88.0 L309.2,88.0 L310.3,88.0 L311.4,88.0 L312.5,88.0 L313.6,88.0 L314.7,88.0 L315.8,88.0 L316.9,88.0 L318.0,88.0 L319.1,88.0 L320.2,88.0 L321.2,88.0 L322.3,88.0 L323.4,88.0 L324.5,88.0 L325.6,88.0 L326.7,88.0 L327.8,88.0 L328.9,88.0 L330.0,88.0 L331.1,88.0 L332.2,88.0 L333.3,88.0 L334.4,88.0 L335.5,88.0 L336.6,88.0 L337.7,88.0 L338.8,88.0 L339.8,88.0 L340.9,88.0 L342.0,88.0 L343.1,88.0 L344.2,88.0 L345.3,88.0 L346.4,88.0 L347.5,88.0 L348.6,88.0 L349.7,88.0 L350.8,88.0 L351.9,88.0 L353.0,88.0 L354.1,88.0 L355.2,88.0 L356.2,88.0 L357.3,88.0 L358.4,88.0 L359.5,88.0 L360.6,88.0 L361.7,88.0 L362.8,88.0 L363.9,88.0 L365.0,88.0 L366.1,88.0 L367.2,88.0 L368.3,88.0 L369.4,88.0 L370.5,88.0 L371.6,88.0 L372.7,88.0 L373.8,88.0 L374.8,88.0 L375.9,88.0 L377.0,88.0 L378.1,88.0 L379.2,88.0 L380.3,88.0 L381.4,88.0 L382.5,88.0 L383.6,88.0 L384.7,88.0 L385.8,88.0 L386.9,88.0 L388.0,88.0 L389.1,88.0 L390.2,88.0 L391.2,88.0 L392.3,88.0 L393.4,88.0 L394.5,88.0 L395.6,88.0 L396.7,88.0 L397.8,88.0 L398.9,88.0 L400.0,88.0" class="ma-meas"/>
+              <g transform="translate(50,160)"><line x1="0" y1="-4" x2="20" y2="-4" class="ma-meas"/><text x="26" y="0" class="ma-tick">mesure</text><line x1="96" y1="-4" x2="116" y2="-4" class="ma-ref"/><text x="122" y="0" class="ma-tick">référence</text><rect x="210" y="-11" width="16" height="13" class="ma-env"/><text x="232" y="0" class="ma-tick">seuils</text></g>
+              <text x="20" y="196" class="ma-ct">Indicateur d’endommagement</text>
+              <rect x="50" y="206" width="370" height="18" class="ma-alert"/>
+              <text x="416" y="219" class="ma-tick ma-tick-alert" text-anchor="end">zone d’alerte</text>
+              <line x1="50" y1="224" x2="420" y2="224" class="ma-thr"/>
+              <line x1="50" y1="284" x2="420" y2="284" class="ma-axis"/>
+                            <path d="M70,266.0 L110,257.0 L150,261.5 L190,254.0 L230,258.5 L270,248.0 L310,252.5 L350,243.5 L390,249.5" class="ma-bline"/>
+              <circle cx="70" cy="266.0" r="4.5" class="ma-dot-s"/><circle cx="110" cy="257.0" r="4.5" class="ma-dot-s"/><circle cx="150" cy="261.5" r="4.5" class="ma-dot-s"/><circle cx="190" cy="254.0" r="4.5" class="ma-dot-s"/><circle cx="230" cy="258.5" r="4.5" class="ma-dot-s"/><circle cx="270" cy="248.0" r="4.5" class="ma-dot-s"/><circle cx="310" cy="252.5" r="4.5" class="ma-dot-s"/><circle cx="350" cy="243.5" r="4.5" class="ma-dot-s"/><circle cx="390" cy="249.5" r="4.5" class="ma-dot-s"/>
+              <text x="70" y="304" class="ma-tick" text-anchor="middle">M1</text><text x="110" y="304" class="ma-tick" text-anchor="middle">M2</text><text x="150" y="304" class="ma-tick" text-anchor="middle">M3</text><text x="190" y="304" class="ma-tick" text-anchor="middle">M4</text><text x="230" y="304" class="ma-tick" text-anchor="middle">M5</text><text x="270" y="304" class="ma-tick" text-anchor="middle">M6</text><text x="310" y="304" class="ma-tick" text-anchor="middle">M7</text><text x="350" y="304" class="ma-tick" text-anchor="middle">M8</text><text x="390" y="304" class="ma-tick" text-anchor="middle">M9</text>
+            </svg>
+          </div>
+          <figcaption>
+            <h3 class="mon-illus-title"><span class="mon-num">2</span>Analyse des données</h3>
+            <p class="mon-illus-text">En haut, le signal mesuré est superposé à la référence ; en bas, l’indicateur d’endommagement reste sous la zone d’alerte.</p>
+            <p class="mon-illus-note">Graphique : exemple illustratif, données non réelles.</p>
+          </figcaption>
+        </figure>
       </div>
     </div>
 
@@ -2773,8 +2985,8 @@ dialog::backdrop { background: rgba(6,14,31,.8); }
     <div class="mon-ed-section mon-fade">
       <div class="mon-ed-header">
         <h2 class="mon-ed-title">Évolution de la corrosion</h2>
-        <span class="mon-ed-num">02 · Courbe temporelle</span>
       </div>
+      <p class="mon-ed-lead">Des contrôles sont réalisés tous les deux mois afin d’évaluer l’état de la structure et de suivre l’évolution de la corrosion dans le temps.</p>
       <div style="width:100%;border-radius:12px;border:1px solid var(--mborder);background:var(--mpaper);padding:1.5rem 1rem .5rem;box-sizing:border-box;">
         <svg viewBox="0 0 900 470" style="width:100%;max-height:520px;height:auto;display:block;font-family:var(--mff-body);" role="img" aria-label="Courbe d'évolution de la corrosion">
           <!-- axes -->
@@ -2799,7 +3011,7 @@ dialog::backdrop { background: rgba(6,14,31,.8); }
           </g>
           <!-- axis titles -->
           <text x="26" y="205" text-anchor="middle" transform="rotate(-90 26 205)" style="font-family:var(--mff-body);font-size:18px;font-weight:700;fill:var(--mink);">Descripteur de santé</text>
-          <text x="470" y="455" text-anchor="middle" style="font-family:var(--mff-body);font-size:18px;font-weight:700;fill:var(--mink);">campagne de monitoring</text>
+          <text x="470" y="455" text-anchor="middle" style="font-family:var(--mff-body);font-size:18px;font-weight:700;fill:var(--mink);">Date de mesure</text>
           <!-- threshold band -->
           <line x1="70" y1="103" x2="870" y2="103" stroke="var(--mwarn)" stroke-width="2" stroke-dasharray="8 6"/>
           <line x1="70" y1="163" x2="870" y2="163" stroke="var(--mwarn)" stroke-width="2" stroke-dasharray="8 6"/>
@@ -2828,15 +3040,15 @@ dialog::backdrop { background: rgba(6,14,31,.8); }
       </div>
       <div class="mon-pred-grid">
         <div class="mon-pred-card">
-          <div class="mon-pred-horizon">Dernière campagne</div>
-          <div class="mon-pred-val" style="font-size:1.3rem;padding-top:4px">Mai 2026</div>
+          <div class="mon-pred-horizon">Dernier contrôle</div>
+          <div class="mon-pred-val" style="font-size:1.3rem;padding-top:4px">Octobre 2026</div>
         </div>
         <div class="mon-pred-card">
-          <div class="mon-pred-horizon">Prochaine campagne</div>
-          <div class="mon-pred-val" style="font-size:1.3rem;padding-top:4px">Juillet 2026</div>
+          <div class="mon-pred-horizon">Prochain contrôle</div>
+          <div class="mon-pred-val" style="font-size:1.3rem;padding-top:4px">Décembre 2026</div>
         </div>
         <div class="mon-pred-card">
-          <div class="mon-pred-horizon">État structurel</div>
+          <div class="mon-pred-horizon">État structural</div>
           <div class="mon-pred-val" style="font-size:1.3rem;padding-top:4px">✅ Normal</div>
           <div class="mon-pred-delta mon-ok">dans les seuils</div>
         </div>
@@ -2847,7 +3059,6 @@ dialog::backdrop { background: rgba(6,14,31,.8); }
     <div class="mon-ed-section mon-fade">
       <div class="mon-ed-header">
         <h2 class="mon-ed-title">Rapports de résultats</h2>
-        <span class="mon-ed-num">04 · Documents PDF</span>
       </div>
       <div class="mon-pdf-list" id="pdf-list">
         <p class="mon-no-pdf">Chargement…</p>
@@ -2860,7 +3071,7 @@ dialog::backdrop { background: rgba(6,14,31,.8); }
     </div>
 
   </div>
-</div></div>
+</div>
 
 <!-- ======== THÉSAURUS — Floating Button ======== -->
 <button class="the-fab" id="the-fab-btn" aria-label="Ouvrir le Thésaurus">
@@ -3188,6 +3399,14 @@ dialog::backdrop { background: rgba(6,14,31,.8); }
     monPanel.classList.add('open');
     document.body.style.overflow = 'hidden';
     if (!monChartInited) { initMonCorrChart(); monChartInited = true; }
+    var monAnim = document.getElementById('mon-anim-svg');
+    if (monAnim && monAnim.setCurrentTime) {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        monAnim.pauseAnimations(); monAnim.setCurrentTime(7.6);
+      } else {
+        monAnim.setCurrentTime(0); monAnim.unpauseAnimations();
+      }
+    }
     setTimeout(function () {
       monPanel.querySelectorAll('.mon-fade').forEach(function (el) { el.classList.add('mon-visible'); });
     }, 60);
